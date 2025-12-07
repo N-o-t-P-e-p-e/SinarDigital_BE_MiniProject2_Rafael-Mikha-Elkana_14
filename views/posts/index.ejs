@@ -1,0 +1,22 @@
+<%- include('../layout', { 
+  content: `
+    ${posts.length === 0 ? "<p>No posts available.</p>" : ""}
+    ${posts.map(p => `
+      <div class="card">
+        <h2>📌 ${p.title}</h2>
+        <p><strong>${p.user?.name || "Unknown"}</strong> — 
+        <small>${new Date(p.createdAt).toLocaleString()}</small></p>
+        <p>${p.content}</p>
+
+        ${p.image ? `<img class="thumb" src="/uploads/${p.image}" />` : ""}
+
+        <div class="actions">
+          <a class="btn btn-primary" href="/posts/${p.id}/edit">✏ Edit</a>
+          <form action="/posts/${p.id}/delete" method="post" style="display:inline" onsubmit="return confirm('Delete this post?')">
+              <button class="btn btn-danger" type="submit">🗑 Delete</button>
+          </form>
+        </div>
+      </div>
+    `).join("")}
+  `
+}) %>

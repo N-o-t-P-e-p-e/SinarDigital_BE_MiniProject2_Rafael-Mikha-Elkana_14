@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Project - Tweetter</title>
+    <style>
+
+	*, *::before, *::after {
+            box-sizing: border-box;
+	}
+
+        body {
+            font-family: Inter, Arial, sans-serif;
+            background: #f6f7fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            font-size: 22px;
+            color: #333;
+        }
+
+	a {
+            text-decoration: none;
+	}
+
+        nav a {
+            margin-left: 10px;
+            background: #007bff;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            background: #0056d6;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #e3e3e3;
+        }
+
+        .thumb {
+            max-width: 200px;
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0056d6;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #ad1f29;
+        }
+
+        .actions {
+            margin-top: 12px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Mini Project - Tweetter</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/posts/new">＋ Create Post</a>
+        </nav>
+    </header>
+
+    <main>
+        <%- content %>
+    </main>
+</div>
+
+</body>
+</html>

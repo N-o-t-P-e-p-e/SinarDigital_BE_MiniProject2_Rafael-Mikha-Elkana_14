@@ -1,0 +1,30 @@
+<%- include('../layout', {
+  content: `
+    <div class="card">
+      <h2>Edit Post</h2>
+
+      <form action="/posts/${post.id}" method="post" enctype="multipart/form-data">
+
+        <label>Title</label>
+        <input name="title" value="${post.title}" required/>
+
+        <label>Content</label>
+        <textarea name="content" rows="4">${post.content}</textarea>
+
+        <label>User</label>
+        <select name="userId" required>
+          ${users.map(u =>
+            `<option value="${u.id}" ${u.id === post.userId ? "selected" : ""}>${u.name} (${u.email})</option>`
+          ).join("")}
+        </select>
+
+        <label>Current Image</label><br/>
+        ${post.image ? `<img class="thumb" src="/uploads/${post.image}" /><br/>` : "No image"}
+        <br/>
+        <input type="file" name="image" accept="image/*"/>
+
+        <button class="btn btn-primary" type="submit">Update</button>
+      </form>
+    </div>
+  `
+}) %>
